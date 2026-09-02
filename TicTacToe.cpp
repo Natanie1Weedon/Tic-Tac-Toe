@@ -22,7 +22,7 @@ int main()
            else{plansza[j][i]='O';}
         }
     }
-    for(int k=0;k<9;k++)
+    for(int k=0;k<10;k++)
     {
         ustawKursor(0,2);
          for(int j=0;j<11;j++)
@@ -32,6 +32,24 @@ int main()
                 cout<<plansza[j][i];
             }
             cout<<endl;
+        }
+        if(k==9)
+        {
+            ustawKursor(0,19);
+            cout<<endl<<"Draw/Remis"<<endl;
+            break;
+    }
+        if(plansza[0][0]=='\\'&&plansza[4][0]=='\\'&&plansza[8][0]=='\\'||plansza[0][0]=='\\'&&plansza[0][4]=='\\'&&plansza[0][8]=='\\'||plansza[0][4]=='\\'&&plansza[4][4]=='\\'&&plansza[8][4]=='\\'||plansza[4][0]=='\\'&&plansza[4][4]=='\\'&&plansza[4][8]=='\\'||plansza[0][8]=='\\'&&plansza[4][8]=='\\'&&plansza[8][8]=='\\'||plansza[8][0]=='\\'&&plansza[8][4]=='\\'&&plansza[8][8]=='\\'||plansza[0][0]=='\\'&&plansza[4][4]=='\\'&&plansza[8][8]=='\\'||plansza[0][8]=='\\'&&plansza[4][4]=='\\'&&plansza[8][0]=='\\')
+        {
+            ustawKursor(0,19);
+            cout<<endl<<"Player X won/Gracz X wygrał"<<endl;
+            break;
+        }
+        else if(plansza[0][0]=='.'&&plansza[4][0]=='.'&&plansza[8][0]=='.'||plansza[0][0]=='.'&&plansza[0][4]=='.'&&plansza[0][8]=='.'||plansza[0][4]=='.'&&plansza[4][4]=='.'&&plansza[8][4]=='.'||plansza[4][0]=='.'&&plansza[4][4]=='.'&&plansza[4][8]=='.'||plansza[0][8]=='.'&&plansza[4][8]=='.'&&plansza[8][8]=='.'||plansza[8][0]=='.'&&plansza[8][4]=='.'&&plansza[8][8]=='.'||plansza[0][0]=='.'&&plansza[4][4]=='.'&&plansza[8][8]=='.'||plansza[0][8]=='.'&&plansza[4][4]=='.'&&plansza[8][0]=='.')
+        {
+            ustawKursor(0,19);
+            cout<<endl<<"Player O won/Gracz O wygrał"<<endl;
+            break;
         }
         cout<<endl;
         cout<<"Type the space where to go/Wpisz pole gdzie iść. The spaces are/Pola to:"<<endl;
@@ -44,6 +62,11 @@ int main()
         cin>>ruch;
         if(ruch=="Centre"||ruch=="Środek")
         {
+            if(plansza[4][4]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[4][4]='\\';
@@ -63,9 +86,15 @@ int main()
                 plansza[6][5]='"';
                 plansza[6][6]='"';
             }
+            }
         }
-         if(ruch=="Left"||ruch=="Lewo")
+         else if(ruch=="Left"||ruch=="Lewo")
         {
+            if(plansza[4][0]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[4][0]='\\';
@@ -85,9 +114,15 @@ int main()
                 plansza[6][1]='"';
                 plansza[6][2]='"';
             }
+            }
         }
-         if(ruch=="Right"||ruch=="Prawo")
+        else if(ruch=="Right"||ruch=="Prawo")
         {
+            if(plansza[4][8]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[4][8]='\\';
@@ -107,9 +142,15 @@ int main()
                 plansza[6][9]='"';
                 plansza[6][10]='"';
             }
+            }
         }
-            if(ruch=="Top"||ruch=="Góra")
+        else if(ruch=="Top"||ruch=="Góra")
         {
+            if(plansza[0][4]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[0][4]='\\';
@@ -129,9 +170,15 @@ int main()
                 plansza[2][5]='"';
                 plansza[2][6]='"';
             }
+            }
         }
-             if(ruch=="TopLeft"||ruch=="LewaGóra")
+        else if(ruch=="TopLeft"||ruch=="LewaGóra")
         {
+            if(plansza[0][0]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[0][0]='\\';
@@ -151,9 +198,15 @@ int main()
                 plansza[2][1]='"';
                 plansza[2][2]='"';
             }
+            }
         }
-              if(ruch=="TopRight"||ruch=="PrawaGóra")
+        else if(ruch=="TopRight"||ruch=="PrawaGóra")
         {
+            if(plansza[0][8]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[0][8]='\\';
@@ -173,9 +226,15 @@ int main()
                 plansza[2][9]='"';
                 plansza[2][10]='"';
             }
+            }
         }
-         if(ruch=="Bottom"||ruch=="Dół")
+        else if(ruch=="Bottom"||ruch=="Dół")
         {
+            if(plansza[8][4]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[8][4]='\\';
@@ -195,9 +254,15 @@ int main()
                 plansza[10][5]='"';
                 plansza[10][6]='"';
             }
+            }
         }
-        if(ruch=="BottomLeft"||ruch=="LewyDół")
+        else if(ruch=="BottomLeft"||ruch=="LewyDół")
         {
+            if(plansza[8][0]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[8][0]='\\';
@@ -217,9 +282,15 @@ int main()
                 plansza[10][1]='"';
                 plansza[10][2]='"';
             }
+            }
         }
-        if(ruch=="BottomRight"||ruch=="PrawyDół")
+        else if(ruch=="BottomRight"||ruch=="PrawyDół")
         {
+            if(plansza[8][8]!='O'){cout<<"This space is already taken/To pole jest już zajęte"<<endl; k--;}
+            else
+            {
+            ustawKursor(0,19);
+            cout<< "                                                                        \r";
             if(kolej==krzyżyk)
             {
                 plansza[8][8]='\\';
@@ -239,6 +310,12 @@ int main()
                 plansza[10][9]='"';
                 plansza[10][10]='"';
             }
+            }
+        }
+        else
+        {
+            cout<<"Space typed in incorrectly/Źle wprowadzone pole"<<endl;
+            k--;
         }
   }
 }
